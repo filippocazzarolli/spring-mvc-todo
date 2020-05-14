@@ -9,5 +9,31 @@
 <h1>TODO</h1>
 <p th:text="${message}"></p>
 
+<form action="/" method="POST">
+    <input name="name"/>
+    <input type="submit" value="Add" />
+</form>
+
+<br/>
+<br/>
+
+<table>
+    <thead>
+    <tr>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Completed</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="todo : ${todos}">
+        <td th:text="${todo.desc}"></td>
+        <td th:text="${todo.targetDate}"></td>
+        <td th:text="${todo.done}"></td>
+    </tr>
+    </tbody>
+</table>
+
 </body>
 </html>
